@@ -1,7 +1,9 @@
 package com.example.formulas.domain.mapper;
 
 
+import com.example.formulas.domain.Science;
 import com.example.formulas.domain.Theme;
+import com.example.formulas.nodb.NoDb;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +18,13 @@ public class ThemeMapper {
                     jsonObject.getString("name"),
                     ScienceMapper.scienceFromThemeJson(jsonObject)
             );
+            for (Theme theme1 : NoDb.THEME_LIST) {
+                if (theme1.getName().equals(theme.getName())) {
+                    theme = theme1;
+                    break;
+                }
+            }
+            theme.getScience().addTheme(theme);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -31,6 +40,12 @@ public class ThemeMapper {
                     jsonObject.getJSONObject("themeDto").getString("name"),
                     ScienceMapper.scienceFromThemeJson(jsonObject.getJSONObject("themeDto"))
             );
+            for (Theme theme1 : NoDb.THEME_LIST) {
+                if (theme1.getName().equals(theme.getName())) {
+                    theme = theme1;
+                    break;
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

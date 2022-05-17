@@ -1,6 +1,8 @@
 package com.example.formulas.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Theme implements Serializable {
     private int id;
@@ -9,11 +11,16 @@ public class Theme implements Serializable {
 
     private Science science;
 
+    private List<Formula> formulaList = new ArrayList<Formula>();
+
     public Theme(int id, String name, Science science) {
         this.name = name;
         this.id = id;
         this.science = science;
-//        this.science.addTheme(this);
+    }
+
+    public void addFormula(Formula formula) {
+        this.formulaList.add(formula);
     }
 
     public int getId() {

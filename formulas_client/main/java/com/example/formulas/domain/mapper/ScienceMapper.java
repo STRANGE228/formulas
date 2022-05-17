@@ -1,7 +1,10 @@
 package com.example.formulas.domain.mapper;
 
 
+import android.util.Log;
+
 import com.example.formulas.domain.Science;
+import com.example.formulas.nodb.NoDb;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,6 +32,12 @@ public class ScienceMapper {
                     jsonObject.getJSONObject("scienceDto").getInt("id"),
                     jsonObject.getJSONObject("scienceDto").getString("name")
             );
+            for (Science science1 : NoDb.SCIENCE_LIST) {
+                if (science1.getName().equals(science.getName())) {
+                    science = science1;
+                    break;
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -1,9 +1,11 @@
 package com.example.formulas.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 
 import androidx.appcompat.widget.AppCompatButton;
@@ -14,6 +16,7 @@ import com.example.formulas.R;
 import com.example.formulas.adapter.ScienceSpinnerAdapter;
 import com.example.formulas.adapter.ThemeSpinnerAdapter;
 import com.example.formulas.domain.Formula;
+import com.example.formulas.domain.Science;
 import com.example.formulas.domain.Theme;
 import com.example.formulas.nodb.NoDb;
 import com.example.formulas.rest.FormulasApiVolley;
@@ -42,6 +45,18 @@ public class AddFormulaFragment extends Fragment {
 
         spScience.setAdapter(scienceSpinnerAdapter);
         spTheme.setAdapter(themeSpinnerAdapter);
+
+        spScience.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent,
+                                       View itemSelected, int selectedItemPosition, long selectedId) {
+
+                themeSpinnerAdapter.clear();
+                themeSpinnerAdapter.addAll(((Science)spScience.getSelectedItem()).getThemeList());
+                themeSpinnerAdapter.notifyDataSetChanged();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override

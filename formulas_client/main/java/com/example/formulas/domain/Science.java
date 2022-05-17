@@ -1,6 +1,11 @@
 package com.example.formulas.domain;
 
+import android.util.Log;
+
+import com.example.formulas.nodb.NoDb;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Science implements Serializable {
@@ -8,7 +13,7 @@ public class Science implements Serializable {
 
     private String name;
 
-    private List<Theme> themeList;
+    private ArrayList<Theme> themeList = new ArrayList<>();
 
     public Science(int id, String name) {
         this.name = name;
@@ -16,7 +21,7 @@ public class Science implements Serializable {
     }
 
     public void addTheme(Theme theme) {
-        this.themeList.add(theme);
+        themeList.add(theme);
     }
 
     public int getId() {
@@ -25,6 +30,10 @@ public class Science implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    public List<Theme> getThemeList(){
+        return this.themeList;
     }
 
     @Override
