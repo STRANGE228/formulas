@@ -1,5 +1,6 @@
 package com.mercury.service;
 
+import com.mercury.domain.Formula;
 import com.mercury.domain.Science;
 import com.mercury.repository.ScienceRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,11 @@ public class ScienceServiceImpl implements ScienceService {
     private final ScienceRepository scienceRepository;
 
     @Override
-    public Science insert(Science science) {
+    public Science insert(String nameScience) {
+        Science science = Science.builder()
+                .name(nameScience)
+                .build();
+
         return (Science) scienceRepository.save(science);
     }
 

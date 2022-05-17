@@ -1,6 +1,8 @@
 package com.mercury.rest.controller;
 
+import com.mercury.domain.Formula;
 import com.mercury.domain.Science;
+import com.mercury.rest.dto.FormulaDto;
 import com.mercury.rest.dto.ScienceDto;
 import com.mercury.service.ScienceService;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +26,10 @@ public class ScienceController {
     }
 
     @PostMapping("/science")
-    public ScienceDto insertScience(@RequestBody ScienceDto scienceDto) {
-        Science science = scienceService.insert(ScienceDto.toDomainObject(scienceDto));
+    public ScienceDto insertScience(
+            @RequestParam String nameScience
+    ) {
+        Science science = scienceService.insert(nameScience);
         return ScienceDto.toDto(science);
     }
 

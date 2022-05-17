@@ -48,8 +48,8 @@ public class ThemeController {
         return ThemeDto.toDto(themeService.getById(id));
     }
 
-    @DeleteMapping("/genus/{id}")
-    public void deleteGenus(@PathVariable int id) {
+    @DeleteMapping("/theme/{id}")
+    public void deleteTheme(@PathVariable int id) {
         themeService.deleteById(id);
     }
 }

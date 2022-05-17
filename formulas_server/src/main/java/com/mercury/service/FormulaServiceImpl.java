@@ -48,7 +48,6 @@ public class FormulaServiceImpl implements FormulaService{
     @Override
     public Formula update(int id, String nameFormula, String formula_s, String nameTheme) {
         Theme theme = themeRepository.findByName(nameTheme);
-
         if (theme == null) {
             Science science = scienceRepository.findByName("неизвестно");
             theme = Theme.builder()
@@ -59,6 +58,7 @@ public class FormulaServiceImpl implements FormulaService{
         }
 
         Formula formula = Formula.builder()
+                .id(id)
                 .name(nameFormula)
                 .formula(formula_s)
                 .theme(theme)

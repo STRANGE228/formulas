@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ScienceService {
 
-    Science insert(Science science);
+    Science insert(String nameScience);
 
     List<Science> getAll();
 
