@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Formulas</string>
+    <string name="formulas">Формулы</string>
+    <string name="add_formula">Добавить формулу</string>
+    <string name="name_of_the_formula">Название формулы</string>
+    <string name="title">Название</string>
+    <string name="formula">Формула</string>
+    <string name="science_name">Предмет науки</string>
+    <string name="theme_name">Тема</string>
+    <string name="change_formula">Изменить формулу</string>
+    <string name="save_formula">Сохранить формулу</string>
+    <string name="menu">Меню</string>
+    <string name="add_science">Добавить науку</string>
+    <string name="add_theme">Добавить тему</string>
+    <string name="edit_science">Редактировать науку</string>
+    <string name="new_name_science">Новое название науки</string>
+    <string name="hint_edit_science">Новое название или сотрите для удаления</string>
+    <string name="choice_science">Выберите какую науку редактировать</string>
+    <string name="edit_theme">Редактировать тему</string>
+    <string name="new_name_theme">Новое название темы</string>
+</resources>
