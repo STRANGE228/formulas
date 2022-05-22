@@ -98,4 +98,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
+    public FormulaAdapter getFormulaAdapter() {
+        return formulaAdapter;
+    }
 }

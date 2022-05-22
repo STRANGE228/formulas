@@ -35,6 +35,10 @@ public class Theme implements Serializable {
         return science;
     }
 
+    public List<Formula> getFormulaList() {
+        return formulaList;
+    }
+
     @Override
     public String toString() {
         return name;

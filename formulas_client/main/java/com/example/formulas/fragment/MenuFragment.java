@@ -13,7 +13,7 @@ import com.example.formulas.R;
 
 public class MenuFragment extends Fragment {
 
-    AppCompatButton btnBack, addFormula, addScience, addTheme, changeScience, changeTheme;
+    AppCompatButton btnBack, addFormula, addScience, addTheme, changeScience, changeTheme, sortFormulas;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -96,6 +96,19 @@ public class MenuFragment extends Fragment {
                         .commit();
             }
         });
+
+//        sortFormulas = view.findViewById(R.id.btn_formulas_sort);
+//        sortFormulas.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FormulasSortFragment formulasSortFragment = new FormulasSortFragment();
+//
+//                getActivity().getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .add(R.id.fl_main, formulasSortFragment)
+//                        .commit();
+//            }
+//        });
 
 
         return view;

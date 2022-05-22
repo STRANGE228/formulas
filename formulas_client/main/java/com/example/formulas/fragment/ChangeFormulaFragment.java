@@ -48,8 +48,10 @@ public class ChangeFormulaFragment extends Fragment {
         scienceSpinnerAdapter = new ScienceSpinnerAdapter(getContext(), NoDb.SCIENCE_LIST);
         themeSpinnerAdapter = new ThemeSpinnerAdapter(getContext(), NoDb.THEME_LIST);
 
+
         spScience.setAdapter(scienceSpinnerAdapter);
         spTheme.setAdapter(themeSpinnerAdapter);
+
 
         spScience.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent,

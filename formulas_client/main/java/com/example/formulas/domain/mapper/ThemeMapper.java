@@ -1,6 +1,8 @@
 package com.example.formulas.domain.mapper;
 
 
+import android.util.Log;
+
 import com.example.formulas.domain.Science;
 import com.example.formulas.domain.Theme;
 import com.example.formulas.nodb.NoDb;
